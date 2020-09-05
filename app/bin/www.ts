@@ -1,4 +1,7 @@
-import app from '../Http/Bootstrap/server';
+import * as dotenv from 'dotenv';
+dotenv.config();
+
+import { app } from '../Http/Bootstrap';
 
 /**
  * Start Express server.

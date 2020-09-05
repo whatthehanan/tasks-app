@@ -1,0 +1,52 @@
+{
+  "name": "todoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:build": "tsc --watch",
+    "start:run": "cross-env NODE_ENV=development nodemon",
+    "dev": "concurrently \"npm run start:*\"",
+    "clean": "rimraf build",
+    "prod": "cross-env NODE_ENV=production npm run clean && npm run build && node build/bin/www.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/express": "^4.17.2",
+    "@types/lodash.lowerfirst": "^4.3.6",
+    "@types/mongoose": "^5.5.34",
+    "@types/node-uuid": "0.0.28",
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash.lowerfirst": "^4.3.1",
+    "mongoose": "^5.8.1",
+    "morgan": "^1.9.1",
+    "node-uuid": "^1.4.8",
+    "simple-command-bus": "^1.0.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@types/http-errors": "^1.6.3",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/morgan": "^1.7.37",
+    "@types/node": "^12.12.21",
+    "concurrently": "^5.0.2",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.0",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  }
+}

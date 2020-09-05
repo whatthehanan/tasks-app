@@ -1,4 +1,5 @@
 import { v1 as generateId } from 'node-uuid';
+import UserDTO from './UserDTO';
 
 class User {
   private password: string;
@@ -24,7 +25,7 @@ class User {
     this.password = value;
   }
 
-  toStoreObject() {
+  toDTO(): UserDTO {
     return {
       userId: this.userId,
       email: this.email,

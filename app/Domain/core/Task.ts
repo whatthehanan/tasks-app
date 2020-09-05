@@ -1,14 +1,15 @@
 import { v1 as generateId } from 'node-uuid';
+import TaskDTO from './TaskDTO';
 
 class Task {
-  private constructor(public userId: string, public name: string) {
-    this.userId = userId;
+  private constructor(public taskId: string, public name: string) {
+    this.taskId = taskId;
     this.name = name;
   }
 
-  toStoreObject() {
+  toDTO(): TaskDTO {
     return {
-      userId: this.userId,
+      taskId: this.taskId,
       name: this.name,
     };
   }
@@ -29,7 +30,7 @@ class Task {
    * creates task from UserModel object
    */
   static createFromUserObject(obj: any) {
-    return new Task(obj.userId, obj.name);
+    return new Task(obj.taskId, obj.name);
   }
 }
 
